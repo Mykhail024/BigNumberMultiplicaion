@@ -16,8 +16,6 @@ find_package(Qt6 COMPONENTS Core Widgets REQUIRED)
 
 add_executable(${PROJECT_NAME}
     src/main.cpp
-    src/math.cpp
-    src/BigNumber.cpp
 )
 
 target_link_libraries(${PROJECT_NAME} Qt6::Core Qt6::Widgets)
