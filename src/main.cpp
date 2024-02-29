@@ -9,10 +9,10 @@
 #include <iostream>
 
 #include "math.h"
-#include "BigNumber.h"
 
 using namespace std::chrono;
 
+/*
 BigNumber karatsuba(BigNumber x, BigNumber y)
 {
     if(x.size() > y.size()) {
@@ -35,9 +35,9 @@ BigNumber karatsuba(BigNumber x, BigNumber y)
 
     return ((P1 << 2*(n-n/2)) + P2) + ((P3 - (P1 + P2)) << n-(n/2));
 }
-
+*/
 int main(int argc, char **argv)
-{
+{/*
     BigNumber a("10010101010101001010100101010101101110111100100100010111010101000100100010100010001101110111100100100010111010101000100100010100010001101110111100100100010111010101000100100010100010001101110111100100100010111010101000100100010100010001");
     BigNumber b("10101010110101010101101110111100100100010111010101000100100010100010001101110111100100100010111010101000100100010100010001101110111100100100010111010101000100100010100010001");
 
@@ -60,7 +60,7 @@ int main(int argc, char **argv)
     qDebug() << "Standard:" << sr_time.count();
 
     std::bitset<0> g;
-
+*/
 
 /*
     BigNumber a(50);
