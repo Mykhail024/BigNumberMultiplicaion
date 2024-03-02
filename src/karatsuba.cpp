@@ -102,9 +102,17 @@ std::string karatsuba(std::string a, std::string b)
     auto [al, ar] = split(a);
     auto [bl, br] = split(b);
 
-    string p1 = karatsuba(al, bl);
-    string p2 = karatsuba(ar, br);
-    string p3 = karatsuba(add(al, ar), add(bl, br));
+    const string p1 = karatsuba(al, bl);
+    const string p2 = karatsuba(ar, br);
+    const string p3 = karatsuba(add(al, ar), add(bl, br));
 
-    return add(add(shift_left(p1, 2*(size-size/2)), p2), shift_left(sub(p3, add(p1, p2)), size-(size/2)));
+    const string rp1 = shift_left(p1, 2*(size-size/2));
+    const string rp2 = shift_left(sub(p3, add(p1, p2)), size-(size/2));
+
+    return add(add(rp1, p2), rp2);
+}
+
+std::string multiply(std::string a, std::string b)
+{
+
 }
