@@ -7,16 +7,16 @@ set(CMAKE_CXX_STANDARD 23)
 set(CMAKE_CXX_STANDARD_REQUIRED ON)
 set(CMAKE_CXX_COMPILER "clang++")
 set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -O2")
-set(CMAKE_AUTORCC ON)
-set(CMAKE_AUTOMOC ON)
 
 project(${PROJECT_NAME})
 
-find_package(Qt6 COMPONENTS Core Widgets REQUIRED)
+add_subdirectory(external/qcustomplot)
 
-add_executable(${PROJECT_NAME}
-    src/main.cpp
-    src/karatsuba.cpp
-)
+add_subdirectory(src/math)
+add_subdirectory(src/widgets)
 
-target_link_libraries(${PROJECT_NAME} Qt6::Core Qt6::Widgets)
+add_executable(${PROJECT_NAME} src/main.cpp)
+
+target_include_directories(${PROJECT_NAME} PUBLIC src)
+
+target_link_libraries(${PROJECT_NAME} bnp.widgets)

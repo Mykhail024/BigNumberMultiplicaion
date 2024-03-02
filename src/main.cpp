@@ -1,19 +1,38 @@
 #include <chrono>
-#include <QApplication>
 
-#include "karatsuba.h"
+#include "widgets/widgets.h"
 
 using namespace std::chrono;
 
-int main(int argc, char **argv)
+/*
+int main(int argc, char *argv[])
 {
-    std::string a = "10010101010101001010100101010101";
-    std::string b = "10101010110101010101";
+  QApplication a(argc, argv);
+  QMainWindow window;
+  
+  // setup customPlot as central widget of window:
+  QCustomPlot customPlot;
+  window.setCentralWidget(&customPlot);
+  
+  // create plot (from quadratic plot example):
+  QVector<double> x(101), y(101);
+  for (int i=0; i<101; ++i)
+  {
+    x[i] = i/50.0 - 1;
+    y[i] = x[i]*x[i];
+  }
+  customPlot.addGraph();
+  customPlot.graph(0)->setPen(QPen(QColor("red")));
+  customPlot.graph(0)->setData(x, y);
+  customPlot.xAxis->setLabel("x");
+  customPlot.yAxis->setLabel("y");
+  customPlot.rescaleAxes();
+  
+  window.setGeometry(100, 100, 500, 400);
+  window.show();
+  return a.exec();
+}*/
 
-    auto start = high_resolution_clock::now();
-    std::string result = karatsuba(a, b);
-    auto stop = high_resolution_clock::now();
-
-    qDebug() << result;
-    qDebug() << "time:" << duration_cast<microseconds>(stop-start).count();
+int main(int argc, char **argv) {
+    return showApp(argc, argv);
 }
