@@ -111,8 +111,3 @@ std::string karatsuba(std::string a, std::string b)
 
     return add(add(rp1, p2), rp2);
 }
-
-std::string multiply(std::string a, std::string b)
-{
-
-}
