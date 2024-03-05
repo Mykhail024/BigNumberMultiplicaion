@@ -13,7 +13,7 @@ class QCustomPlot;
 
 class TestThread : public QThread
 {
-    Q_OBJECT;
+    Q_OBJECT
     public:
         TestThread(QObject *parent = nullptr);
         void setInfo(const int start, const int stop, const int step, const int itCount);
